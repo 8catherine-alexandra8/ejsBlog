@@ -29,14 +29,15 @@ app.get('/', function(req, res) {
 
 app.get('/posts/:postName', function(req, res) {
 	const requestedTitle = _.lowerCase(req.params.postName);
+
 	posts.forEach(function(post) {
 		const savedTitle = _.lowerCase(post.title);
+
 		if (savedTitle === requestedTitle) {
-			console.log('Match found!');
-		} else {
-			console.log('No match');
-			console.log('request title = ' + requestedTitle);
-			console.log('savedTitle =' + savedTitle);
+			res.render('post', {
+				postTitle   : post.title,
+				postContent : post.content
+			});
 		}
 	});
 });
