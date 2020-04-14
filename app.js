@@ -21,9 +21,9 @@ app.use(express.static('public'));
 
 app.get('/', function(req, res) {
 	res.render('home', {
-		homeParagraph : homeStartingContent
+		homeParagraph : homeStartingContent,
+		posts         : posts
 	});
-	console.log(posts);
 });
 
 app.get('/contact', function(req, res) {
