@@ -40,8 +40,8 @@ app.get('/compose', function(req, res) {
 	res.render('compose', {});
 });
 
-app.post('/', function(req, res) {
-	console.log(req.body.userComposeEntry);
+app.post('/compose', function(req, res) {
+	console.log(req.body.postTitle);
 });
 
 app.listen(3000, function() {
