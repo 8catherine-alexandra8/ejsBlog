@@ -25,7 +25,9 @@ app.get('/', function(req, res) {
 		posts         : posts
 	});
 });
-
+app.get('/posts/:postId', function(req, res) {
+	console.log(req.params.postId);
+});
 app.get('/contact', function(req, res) {
 	res.render('contact', {
 		contactParagraph : contactContent
