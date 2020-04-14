@@ -9,8 +9,9 @@
    <% let truncPost = post.content.substring(0, 100) + '...' %>
     <h2> <%= post.title %> </h2>
 
-    <p> <%= truncPost %> </p>
+    <p> <%= truncPost %> <a href="/posts/<%= post.title %>">Read More</a></p>
 
     <% }) %>
 
 <%- include('partials/footer'); -%>
+
